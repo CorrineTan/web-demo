@@ -8,21 +8,21 @@ Predis\Autoloader::register();
 $instance_id = file_get_contents("http://instance-data/latest/meta-data/instance-id");
 
 // Database connection parameters
-$db_hostname = "localhost";
+$db_hostname = "172.31.6.229";
 $db_database = "web_demo";
-$db_username = "username";
+$db_username = "corrine";
 $db_password = "password";
 $db = open_db_connection($db_hostname, $db_database, $db_username, $db_password);
 
 // Image upload options
-$storage_option = "hd";	// hd or s3
+$storage_option = "s3";	// hd or s3
 $hd_folder  = "uploads";
-$s3_region  = "us-east-2";
-$s3_bucket  = "your_s3_bucket_name";
+$s3_region  = "us-east-1";
+$s3_bucket  = "large-scale-web-app";
 $s3_prefix  = "uploads";
 $s3_client  = null;
-$enable_cf  = false;
-$cf_baseurl = "http://xxxxxxxxxxxxxx.cloudfront.net/";
+$enable_cf  = true;
+$cf_baseurl = "http://d2shma6fxpvsxf.cloudfront.net/";
 if ($storage_option == "s3")
 {
 	$s3_client = S3Client::factory(array('region' => $s3_region, 'version' => 'latest'));
@@ -32,8 +32,8 @@ if ($storage_option == "s3")
 $latency = 0;
 
 // Cache configuration
-$enable_cache = false;
-$cache_type = "memcached";	// memcached or redis
+$enable_cache = true;
+$cache_type = "redis";	// memcached or redis
 $cache_key  = "images_html";
 if ($enable_cache && ($cache_type == "memcached"))
 {
@@ -64,7 +64,7 @@ function open_memcache_connection()
 function open_redis_connection()
 {
 	$parameters = [
-    'tcp://web-demo.xxxxxx.clustercfg.use2.cache.amazonaws.com:6379'    // configuration endpoint
+    'tcp://photoredis.6d5xau.clustercfg.use1.cache.amazonaws.com:6379'    // configuration endpoint
 	];
 	$options = [
     	'cluster' => 'redis'
