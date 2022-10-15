@@ -5,4 +5,4 @@ The demo code only contains two PHP files: config.php and index.php. The aws-sdk
 
 John's step by step tutorial is available in his wiki page, and I put my investigations, steps I followed, bugs I met in my (this git repo's) wiki page.
 
-![readme_iamge](./image.png)
+![readme_iamge](image.png)
