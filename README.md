@@ -6,3 +6,5 @@ The demo code only contains two PHP files: config.php and index.php. The aws-sdk
 I put my investigations, steps I followed, bugs I met in my (this git repo's) wiki page.
 
 ![readme_image](https://github.com/CorrineTan/web-demo/blob/master/read_me/image.png)
+
+## Please check the Wiki page of this repo.
