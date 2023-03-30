@@ -7,4 +7,4 @@ I put my investigations, steps I followed, bugs I met in my (this git repo's) wi
 
 ![readme_image](https://github.com/CorrineTan/web-demo/blob/master/read_me/image.png)
 
-## Please check the Wiki page of this repo.
+### Please check the Wiki page of this repo.
